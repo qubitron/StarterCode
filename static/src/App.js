@@ -59,7 +59,6 @@ class App extends Component {
         <FormControl>
           <TextField
             label="Add A Task"
-            // value={this.state.taskToAdd}
             onKeyPress={(e) => this.handleChange(e)}
             margin="normal"
             variant="outlined"
@@ -68,7 +67,7 @@ class App extends Component {
             this.state.tasks.map(task => 
               (<FormControlLabel
                 control={
-                  <Checkbox checked={false}/>
+                  <Checkbox checked={true}/>
                 }
                 label={task}
               />)
