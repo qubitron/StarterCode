@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+node_modules/
+
+db.sqlite3
