@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export function add_task(task) {
-    console.log(task);
     return axios.post("http://localhost:5000/api/v1/add_task", {
         task
     })

@@ -1,4 +1,9 @@
 .App {
   text-align: center;
-  background-color:
+  margin: 20px;
+}
+
+.App input {
+  width: 400px;
+  color: white;
 }

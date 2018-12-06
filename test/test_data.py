@@ -1,6 +1,3 @@
-from ..api import db
-from ..api.task import Task
-
 tasks = [
     "Download the recommended extensions (i.e. App Service)",
     "Use a free guest account to access Azure",
@@ -9,11 +6,3 @@ tasks = [
     "Deploy this application to the App Service instance",
     "View your new website in the browser!"
 ]
-
-session = db.session()
-
-if __name__ == '__main__':
-    db.create_all()
-
-    for task in tasks:
-        Task.add_task(task)

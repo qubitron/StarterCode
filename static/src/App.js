@@ -4,7 +4,20 @@ import { get_all_tasks, add_task } from './http_functions';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Checkbox from '@material-ui/core/Checkbox';
+import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+
+
+const styles = {
+  img: {
+    height: '150px',
+    width: '150px'
+  },
+  white: {
+    color: 'white'
+  }
+};
 
 
 class App extends Component {
@@ -38,7 +51,6 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       });
-    // event.preventDefault();
   }
 
   handleChange(event) {
@@ -56,8 +68,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Typography style={styles.white} variant="h2" gutterBottom>
+          Steps To Deploy To Azure
+        </Typography>
+
         <FormControl>
           <TextField
+            error
+            id="task-input"
             label="Add A Task"
             onKeyPress={(e) => this.handleChange(e)}
             margin="normal"
@@ -67,9 +85,9 @@ class App extends Component {
             this.state.tasks.map(task => 
               (<FormControlLabel
                 control={
-                  <Checkbox checked={true}/>
+                  <Checkbox style={styles.white}/>
                 }
-                label={task}
+                label={<Typography style={styles.white}>{task}</Typography>}
               />)
             )
           }
