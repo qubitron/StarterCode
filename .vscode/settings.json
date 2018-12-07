@@ -1,5 +1,10 @@
 {
-    "python.pythonPath": "/Users/jeffreymew/anaconda2/envs/tf/bin/python",
+    "python.pythonPath": "C:\\Users\\t-jemew\\AppData\\Local\\conda\\conda\\envs\\web\\python.exe",
     "python.linting.pylintEnabled": false,
-    "appService.zipIgnorePattern": ["static/node_modules{,/**}"]
+    "appService.zipIgnorePattern": [
+        "{**/,}node_modules{,/**}",
+        "{**/,}db.sqlite3"
+    ],
+    "appService.deploySubpath": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/597966d1-829f-417e-9950-8189061ec09c/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/flask-react-postgres"
 }
