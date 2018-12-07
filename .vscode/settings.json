@@ -1,5 +1,5 @@
 {
     "python.pythonPath": "/Users/jeffreymew/anaconda2/envs/tf/bin/python",
     "python.linting.pylintEnabled": false,
-    "appService.zipIgnorePattern": ["node_modules{,/**}"]
+    "appService.zipIgnorePattern": ["static/node_modules{,/**}"]
 }
