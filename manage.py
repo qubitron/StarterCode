@@ -22,7 +22,7 @@ def create_db():
 @manager.command
 def create_test_data():
     # Reset the database to original state
-    create_db()
+    db.create_all()
     Task.query.delete()
 
     for task in tasks:
