@@ -51,7 +51,7 @@ npm install
 npm run build
 ```
 
-2. Create the PostgreSQL database
+2. Create the SQL database
 ```bash
 cd ..
 python manage.py create_db
