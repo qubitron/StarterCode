@@ -46,14 +46,12 @@ code .
 
 1. Build the react.js front-end.
 ```bash
-cd static
-npm install
+npm run install
 npm run build
 ```
 
 2. Create the SQL database
 ```bash
-cd ..
 python manage.py create_db
 ```
 
@@ -72,9 +70,11 @@ python manage.py runserver
 
 3. Reload the window and navigate to the Azure tab on the left
 
-4. Access Azure services through (1) Guest Mode, (2) Creating a free Azure account or (3) signing into Azure with an existing account
+4. Access Azure services through either (1) clicking on "Sign in to Azure..." to sign in with an existing azure account or (2) clicking "Create a Free Azure Account..." which brings you to the Azure web portal to allow you to create a free account with Azure
+![](https://imgur.com/a/c5pi7z4)
 
-5. Create an App Service instance with the parameters of a linux system with a Python runtime
+5. Create an App Service instance 
+
 
 6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance
 
