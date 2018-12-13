@@ -2,6 +2,7 @@
 import os
 import subprocess
 import urllib.request
+from envvars import setEnvironmentVariables
 
 
 REQUIRED_ENV_VARS = (
@@ -12,6 +13,8 @@ REQUIRED_ENV_VARS = (
     'POSTGRES_ADMIN_PASSWORD',
     'APP_DB_NAME',
 )
+
+setEnvironmentVariables()
 
 missing = []
 for v in REQUIRED_ENV_VARS:
@@ -36,10 +39,9 @@ create_server_command = [
     '--sku-name', 'GP_Gen5_2',
 ]
 
-create_server = input('Create PostgreSQL server? [y/n]: ')
-if create_server == 'y':
-    print("Creating PostgreSQL server...")
-    subprocess.check_call(create_server_command)
+print("This script will take about 3 minutes to run.")
+print("Creating PostgreSQL server...")
+subprocess.check_call(create_server_command, shell=True)
 
 
 # Set up firewall.
@@ -65,12 +67,10 @@ local_ip_firewall_command = [
     '--name', 'AllowMyIP',
 ]
 
-create_rule = input('Create firewall rules? [y/n]: ')
-if create_rule == 'y':
-    print("Allowing access from Azure...")
-    subprocess.check_call(azure_firewall_command)
-    print("Allowing access from local IP...")
-    subprocess.check_call(local_ip_firewall_command)
+print("Allowing access from Azure...")
+subprocess.check_call(azure_firewall_command, shell=True)
+print("Allowing access from local IP...")
+subprocess.check_call(local_ip_firewall_command, shell=True)
 
 
 create_db_command = [
@@ -80,10 +80,8 @@ create_db_command = [
     '--name', os.getenv('APP_DB_NAME'),
 ]
 
-create_app_db = input('Create App DB? [y/n]: ')
-if create_app_db == 'y':
-    print("Creating App DB...")
-    subprocess.check_call(create_db_command)
+print("Creating App DB...")
+subprocess.check_call(create_db_command, shell=True)
 
 
 connect_details_command = [
@@ -92,7 +90,7 @@ connect_details_command = [
     '--name', os.getenv('POSTGRES_SERVER_NAME'),
 ]
 print("Getting access details...")
-subprocess.check_call(connect_details_command)
+subprocess.check_call(connect_details_command, shell=True)
 
 # Connect to Azure using connection string format (to force SSL)
 # psql "host=$POSTGRES_HOST sslmode=require port=5432 user=$POSTGRES_ADMIN_USER@$POSTGRES_SERVER_NAME dbname=postgres" -W
