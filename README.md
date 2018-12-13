@@ -151,7 +151,11 @@ On the Azure tab in VS Code, right click on your App Service instance.
 
 Click "Open in portal". This should open up your browser and redirect you to the configuration page for your App Service instance.
 
-Under the "Application Settings" tab and under the "Application Settings" section, add a new environment variable for the Postgres 
+Under the "Application Settings" tab and in the "Runtime" textfield, enter the value "startup.txt" in the field. This way, App Service will run the "startup.txt" file specifically generated for this project.
+
+![](https://i.imgur.com/wKGgMz1.png)
+
+![](https://i.imgur.com/MEqyU2g.png)
 
 9. Deploy the code to your newly created App Service instance
 
