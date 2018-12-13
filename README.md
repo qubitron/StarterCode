@@ -98,9 +98,7 @@ Once the instance has been created, a notification will popup on the bottom righ
 
 6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance.
 
-First navigate to https://portal.azure.com/ and sign in with your Azure account.
-
-Secondly 
+[TODO]
 
 7. Navigate to the Azure portal for the Azure Database for Postgres instance and allow incoming connections to the instance for everyone 
 
