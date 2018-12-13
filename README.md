@@ -77,28 +77,62 @@ python manage.py runserver
 5. Create an App Service instance 
 
 On the Azure tab in VS Code, click the "+" button at the top to create a new App Service instance
+
 ![](https://i.imgur.com/HZebZhX.png)
 
 A popup should appear asking for a name for the new web app. Enter a unique name for this new application and then press the "Enter" key. For example, "vs-code-test".
+
 ![](https://i.imgur.com/psEAyoa.png)
 
 On the next screen, select "Python 3.7 " as the runtime.
+
 ![](https://i.imgur.com/3qW0CpR.png)
 
 A notification should popup on the bottom right of your VS Code window indicating your new App Service instance is being created.
+
 ![](https://i.imgur.com/fuOVnfu.png)
 
 Once the instance has been created, a notification will popup on the bottom right of your VS COde window indicating that the creation of the App Service instance was successful.
+
 ![](https://i.imgur.com/EZk6SXO.png)
 
 6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance.
 
-First navigate to 
+First navigate to https://portal.azure.com/ and sign in with your Azure account.
+
+Secondly 
 
 7. Navigate to the Azure portal for the Azure Database for Postgres instance and allow incoming connections to the instance for everyone 
 
-8. Navigate to the Azure portal for the App service instance that was just created, and under the "Application Settings" tab and uneder the "Runtime" section, set the "startup file" parameter to be "startup.txt"
+8. Configure the startup script. 
+
+Navigate back to the Azure tab in VS Code. 
+
+Click on your newly created App Service instance to expand it. 
+
+Right click on the "Application Settings" option in your expanded App Service instance.
+
+![](https://i.imgur.com/mqLqytz.png)
+
+Select "Add New Setting" from the menu options.
+, and under the "Application Settings" tab and uneder the "Runtime" section, set the "startup file" parameter to be "startup.txt"
 
 9. Again under the "Application Settings" tab and under the "Application Settings" section, add a new environment variable for the Postgres 
 
 10. Deploy the code to your newly created App Service instance
+
+On the Azure tab in VS Code, click on the upload button at the top of the extension pane
+
+![](https://i.imgur.com/FlX1XJL.png)
+
+Select the the name of the App Service instance you created in the previous steps
+
+Select the root folder (the first item on the menu) to deploy
+
+A notification should appear on the bottom right of the VS Code window showing that the deployment to your App Service instance is now in progress
+
+![](https://i.imgur.com/y1LShjR.png)
+
+When the deployment is complete, a notification on the bottom right of the VS Code window will show saying that "Deployment sucessful".
+
+From there, click on the "Browse Website" button from within the notification to view the website live in your browser.
