@@ -50,12 +50,23 @@ npm run install
 npm run build
 ```
 
-2. Create the SQL database
+2. Select your Python runtime.
+
+Open a python file (.py) from within your VS Code window.
+
+At the bottom right of the VS Code window, click on the "Select Python Evnrionmnt" button to choose your newly created Python virtual environment
+
+![](https://i.imgur.com/y1LShjR.png)
+
+3. Create the SQL database
+
+Open the VS Code terminal by using the keyboard shortcut "Ctrl" + "\`".
+
 ```bash
 python manage.py create_db
 ```
 
-3. Start the Flask server
+4. Start the Flask server
 ```bash
 python manage.py runserver
 ```
@@ -98,11 +109,26 @@ Once the instance has been created, a notification will popup on the bottom righ
 
 6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance.
 
-[TODO]
+Install the Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 
-7. Navigate to the Azure portal for the Azure Database for Postgres instance and allow incoming connections to the instance for everyone 
+Configure your Azure Database for Postgres instance by opening up the file "envvars.py" and filling in the values for the variables: "POSTGRES_SERVER_NAME", "POSTGRES_ADMIN_USER", "POSTGRES_ADMIN_PASSWORD", and "APP_DB_NAME"
 
-8. Configure the startup script. 
+POSTGRES_SERVER_NAME represents a unique name for your Postgres server in Azure
+
+POSTGRES_ADMIN_USER represents the username for the admin account to the Postgres server (which will be used to login by the web application)
+
+POSTGRES_ADMIN_PASSWORD represents the password for the admin account (remember to never commit this file to Github)
+
+APP_DB_NAME represents a name for the database in your Postgres server
+
+Open the terminal window from within VS Code by using the keyboard shortcut "Ctrl + \`".
+
+Run the command:
+```bash
+python createdb.py
+```
+
+7. Connect your Postgres instance to your App Service instance
 
 Navigate back to the Azure tab in VS Code. 
 
@@ -113,11 +139,21 @@ Right click on the "Application Settings" option in your expanded App Service in
 ![](https://i.imgur.com/mqLqytz.png)
 
 Select "Add New Setting" from the menu options.
-, and under the "Application Settings" tab and uneder the "Runtime" section, set the "startup file" parameter to be "startup.txt"
 
-9. Again under the "Application Settings" tab and under the "Application Settings" section, add a new environment variable for the Postgres 
+In the "Enter new setting key" popup, enter the environment variable name "DATABASE_URL" and press enter to continue
 
-10. Deploy the code to your newly created App Service instance
+In the "Enter setting value" popup, enter the value of your Postgres connection string to your Azure Database for Postgres instance.
+(Example: postgres://[USERNAME]:[PASSWORD]@[SERVER_NAME].postgres.database.azure.com:5432/postgres
+
+8. Configure the startup script.
+
+On the Azure tab in VS Code, right click on your App Service instance.
+
+Click "Open in portal". This should open up your browser and redirect you to the configuration page for your App Service instance.
+
+Under the "Application Settings" tab and under the "Application Settings" section, add a new environment variable for the Postgres 
+
+9. Deploy the code to your newly created App Service instance
 
 On the Azure tab in VS Code, click on the upload button at the top of the extension pane
 
