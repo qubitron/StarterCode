@@ -71,12 +71,29 @@ python manage.py runserver
 3. Reload the window and navigate to the Azure tab on the left
 
 4. Access Azure services through either (1) clicking on "Sign in to Azure..." to sign in with an existing azure account or (2) clicking "Create a Free Azure Account..." which brings you to the Azure web portal to allow you to create a free account with Azure
-![](https://imgur.com/a/c5pi7z4)
+
+![](https://i.imgur.com/HZebZhX.png)
 
 5. Create an App Service instance 
 
+On the Azure tab in VS Code, click the "+" button at the top to create a new App Service instance
+![](https://i.imgur.com/HZebZhX.png)
 
-6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance
+A popup should appear asking for a name for the new web app. Enter a unique name for this new application and then press the "Enter" key. For example, "vs-code-test".
+![](https://i.imgur.com/psEAyoa.png)
+
+On the next screen, select "Python 3.7 " as the runtime.
+![](https://i.imgur.com/3qW0CpR.png)
+
+A notification should popup on the bottom right of your VS Code window indicating your new App Service instance is being created.
+![](https://i.imgur.com/fuOVnfu.png)
+
+Once the instance has been created, a notification will popup on the bottom right of your VS COde window indicating that the creation of the App Service instance was successful.
+![](https://i.imgur.com/EZk6SXO.png)
+
+6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance.
+
+First navigate to 
 
 7. Navigate to the Azure portal for the Azure Database for Postgres instance and allow incoming connections to the instance for everyone 
 
