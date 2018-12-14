@@ -3,13 +3,13 @@ from api import db
 
 class Task(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
-    task = db.Column(db.String(255))
+    description = db.Column(db.String(255))
 
-    def __init__(self, task):
-        self.task = task
+    def __init__(self, description):
+        self.description = description
     
     @staticmethod
-    def add_task(task):
+    def create_task_from_json(task):
         taskToAdd = Task(task)
 
         db.session.add(taskToAdd)
@@ -17,4 +17,4 @@ class Task(db.Model):
     
     @staticmethod
     def get_all_tasks():
-        return [t.task for t in Task.query.all()]
+        return [t.description for t in Task.query.all()]
