@@ -12,13 +12,13 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 ## 1. Setting Up The Project
 
-1. Clone the reponsitory
+**1. Clone the reponsitory**
 ```bash
 git clone https://github.com/jeffreymew/StarterCode.git
 cd StarterCode
 ```
 
-2. Create and activate a virtual environment
+**2. Create and activate a virtual environment**
 
 In Bash
 ```bash
@@ -32,25 +32,25 @@ py -3 -m venv env
 env\scripts\activate
 ```
 
-3. Install requirements.txt
+**3. Install requirements.txt**
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Import and open the project folder into VS Code
+**4. Import and open the project folder into VS Code**
 ```bash
 code .
 ```
 
 ## 2. Running The Code Locally
 
-1. Build the react.js front-end.
+**1. Build the react.js front-end.**
 ```bash
 npm run install
 npm run build
 ```
 
-2. Select your Python runtime.
+**2. Select your Python runtime.**
 
 Open a python file (.py) from within your VS Code window.
 
@@ -58,7 +58,7 @@ At the bottom right of the VS Code window, click on the "Select Python Evnrionmn
 
 ![](https://i.imgur.com/y1LShjR.png)
 
-3. Create the SQL database
+**3. Create the SQL database**
 
 Open the VS Code terminal by using the keyboard shortcut "Ctrl" + "\`".
 
@@ -66,26 +66,26 @@ Open the VS Code terminal by using the keyboard shortcut "Ctrl" + "\`".
 python manage.py create_db
 ```
 
-4. Start the Flask server
+**4. Start the Flask server**
 ```bash
 python manage.py runserver
 ```
 
-4. Check ```localhost:5000``` in your browser to view the web application.
+**4. Check ```localhost:5000``` in your browser to view the web application.**
 
 ## 3. Deploying The Code To Azure
 
-1. Go to the extensions tab on VS Code
+**1. Go to the extensions tab on VS Code**
 
-2. Install the recommended extensions that show up (App Service Extension, Python Extension)
+**2. Install the recommended extensions that show up (App Service Extension, Python Extension)**
 
-3. Reload the window and navigate to the Azure tab on the left
+**3. Reload the window and navigate to the Azure tab on the left**
 
-4. Access Azure services through either (1) clicking on "Sign in to Azure..." to sign in with an existing azure account or (2) clicking "Create a Free Azure Account..." which brings you to the Azure web portal to allow you to create a free account with Azure
+**4. Access Azure services through either (1) clicking on "Sign in to Azure..." to sign in with an existing azure account or (2) clicking "Create a Free Azure Account..." which brings you to the Azure web portal to allow you to create a free account with Azure**
 
 ![](https://i.imgur.com/HZebZhX.png)
 
-5. Create an App Service instance 
+**5. Create an App Service instance**
 
 On the Azure tab in VS Code, click the "+" button at the top to create a new App Service instance
 
@@ -107,19 +107,19 @@ Once the instance has been created, a notification will popup on the bottom righ
 
 ![](https://i.imgur.com/EZk6SXO.png)
 
-6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance.
+**6. Create a PostgreSQL database with Azure Database for Postgres and connect it to the App Service instance.**
 
 Install the Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 
 Configure your Azure Database for Postgres instance by opening up the file "envvars.py" and filling in the values for the variables: "POSTGRES_SERVER_NAME", "POSTGRES_ADMIN_USER", "POSTGRES_ADMIN_PASSWORD", and "APP_DB_NAME"
 
-POSTGRES_SERVER_NAME represents a unique name for your Postgres server in Azure
+**POSTGRES_SERVER_NAME** represents a unique name for your Postgres server in Azure
 
-POSTGRES_ADMIN_USER represents the username for the admin account to the Postgres server (which will be used to login by the web application)
+**POSTGRES_ADMIN_USER** represents the username for the admin account to the Postgres server (which will be used to login by the web application)
 
-POSTGRES_ADMIN_PASSWORD represents the password for the admin account (remember to never commit this file to Github). The guidelines for the password are as follows: "A new password for the server admin account. It must contain between 8 and 128 characters. Your password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.)."
+**POSTGRES_ADMIN_PASSWORD** represents the password for the admin account (remember to never commit this file to Github). The guidelines for the password are as follows: "A new password for the server admin account. It must contain between 8 and 128 characters. Your password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.)."
 
-APP_DB_NAME represents a name for the database in your Postgres server
+**APP_DB_NAME** represents a name for the database in your Postgres server
 
 Open the terminal window from within VS Code by using the keyboard shortcut "Ctrl + \`".
 
@@ -128,7 +128,7 @@ Run the command:
 python createdb.py
 ```
 
-7. Connect your Postgres instance to your App Service instance
+**7. Connect your Postgres instance to your App Service instance**
 
 Navigate back to the Azure tab in VS Code. 
 
@@ -146,7 +146,7 @@ In the "Enter setting value" popup, enter the value of your Postgres connection 
 
 For example: postgres://vs_code_user@vs_code_postgres:password@vs_code_postgres.postgres.database.azure.com:5432/postgres
 
-8. Configure the startup script.
+**8. Configure the startup script.**
 
 On the Azure tab in VS Code, right click on your App Service instance.
 
@@ -158,7 +158,7 @@ Under the "Application Settings" tab and in the "Runtime" textfield, enter the v
 
 ![](https://i.imgur.com/MEqyU2g.png)
 
-9. Deploy the code to your newly created App Service instance
+**9. Deploy the code to your newly created App Service instance**
 
 On the Azure tab in VS Code, click on the upload button at the top of the extension pane
 
