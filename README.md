@@ -117,7 +117,7 @@ POSTGRES_SERVER_NAME represents a unique name for your Postgres server in Azure
 
 POSTGRES_ADMIN_USER represents the username for the admin account to the Postgres server (which will be used to login by the web application)
 
-POSTGRES_ADMIN_PASSWORD represents the password for the admin account (remember to never commit this file to Github)
+POSTGRES_ADMIN_PASSWORD represents the password for the admin account (remember to never commit this file to Github). The guidelines for the password are as follows: "A new password for the server admin account. It must contain between 8 and 128 characters. Your password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.)."
 
 APP_DB_NAME represents a name for the database in your Postgres server
 
@@ -142,8 +142,9 @@ Select "Add New Setting" from the menu options.
 
 In the "Enter new setting key" popup, enter the environment variable name "DATABASE_URL" and press enter to continue
 
-In the "Enter setting value" popup, enter the value of your Postgres connection string to your Azure Database for Postgres instance.
-(Example: postgres://[USERNAME]:[PASSWORD]@[SERVER_NAME].postgres.database.azure.com:5432/postgres
+In the "Enter setting value" popup, enter the value of your Postgres connection string to your Azure Database for Postgres instance. The format of the string is as follows: postgres://[USERNAME]@[SERVER_NAME]:[PASSWORD]@[SERVER_NAME].postgres.database.azure.com:5432/postgres
+
+For example: postgres://vs_code_user@vs_code_postgres:password@vs_code_postgres.postgres.database.azure.com:5432/postgres
 
 8. Configure the startup script.
 
