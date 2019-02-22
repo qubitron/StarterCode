@@ -1,19 +1,17 @@
 import os
 
-from flask import Flask, request, render_template, jsonify
-from api import app
+from flask import Flask, jsonify, render_template, request
 from sqlalchemy.exc import IntegrityError
-from api.task import Task
+
+from api import app
+from api.models import Task
+
 
 @app.route("/", methods=['GET'])
 def index():
     return render_template('index.html')
 
-@app.route('/<path:path>', methods=['GET'])
-def any_root_path(path):
-    return render_template('index.html')
-
-@app.route("/api/v1/get_all_tasks")
+@app.route("/api/v1/get_all_tasks", methods=['GET'])
 def get_all_tasks():
     allTasks = Task.get_all_tasks()
     return jsonify(tasks=allTasks)
@@ -24,8 +22,10 @@ def add_task():
     task = incoming.get('task')
 
     try:
-        Task.add_task(task)
-        return jsonify({'success': True}), 200
-
+        Task.create_task_from_json(task)
+        resp = jsonify({'success': True}), 200
+       
     except IntegrityError:
-        return jsonify({'success': False}), 403
+        resp = jsonify({'success': False}), 403
+    
+    return resp

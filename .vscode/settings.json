@@ -1,9 +1,8 @@
 {
-    "python.pythonPath": "C:\\Users\\t-jemew\\AppData\\Local\\conda\\conda\\envs\\web\\python.exe",
-    "python.linting.pylintEnabled": false,
     "appService.zipIgnorePattern": [
-        "{**/,}node_modules{,/**}",
+        "env/*",
+        "{**/,}site{,/**}",
         "{**/,}db.sqlite3"
     ],
-    "appService.deploySubpath": ""
+    "appService.deploySubpath": "",
 }
