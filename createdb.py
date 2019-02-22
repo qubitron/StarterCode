@@ -36,7 +36,7 @@ create_server_command = [
     '--name', os.getenv('POSTGRES_SERVER_NAME'),
     '--admin-user', os.getenv('POSTGRES_ADMIN_USER'),
     '--admin-password', os.getenv('POSTGRES_ADMIN_PASSWORD'),
-    '--sku-name', 'GP_Gen5_2',
+    '--sku-name', 'B_Gen5_1',
 ]
 
 print("This script will take about 3 minutes to run.")
@@ -56,7 +56,7 @@ azure_firewall_command = [
 ]
 
 with urllib.request.urlopen('http://ip.42.pl/raw') as f:
-    my_ip = f.read()
+    my_ip = f.read().decode("utf-8")
 
 local_ip_firewall_command = [
     'az', 'postgres', 'server', 'firewall-rule', 'create',

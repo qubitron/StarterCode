@@ -54,7 +54,7 @@ npm run build
 
 Open a python file (.py) from within your VS Code window.
 
-At the bottom right of the VS Code window, click on the "Select Python Evnrionmnt" button to choose your newly created Python virtual environment
+If not selected automatically, at the bottom right of the VS Code window, click on the "Select Python Interpreter" button to choose your newly created Python virtual environment
 
 ![](https://i.imgur.com/y1LShjR.png)
 
@@ -103,7 +103,7 @@ A notification should popup on the bottom right of your VS Code window indicatin
 
 ![](https://i.imgur.com/fuOVnfu.png)
 
-Once the instance has been created, a notification will popup on the bottom right of your VS COde window indicating that the creation of the App Service instance was successful.
+Once the instance has been created, a notification will popup on the bottom right of your VS Code window indicating that the creation of the App Service instance was successful.
 
 ![](https://i.imgur.com/EZk6SXO.png)
 

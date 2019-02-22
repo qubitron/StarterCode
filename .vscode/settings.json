@@ -1,7 +1,8 @@
 {
     "appService.zipIgnorePattern": [
-        "{**/,}node_modules{,/**}",
+        "env/*",
+        "{**/,}site{,/**}",
         "{**/,}db.sqlite3"
     ],
-    "appService.deploySubpath": ""
+    "appService.deploySubpath": "",
 }
